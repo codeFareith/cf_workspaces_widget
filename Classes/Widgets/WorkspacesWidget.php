@@ -40,17 +40,17 @@ class WorkspacesWidget implements WidgetRendererInterface, RequestAwareWidgetInt
         $titleSettings = new SettingDefinition(
             'title',
             'string',
-            'Default Title',
-            'LLL:EXT:cf_workspaces_widget/Resources/Private/Language/',
-            'LLL:EXT:cf_workspaces_widget/Resources/Private/Language/'
+            'Default Workspace',
+            'LLL:EXT:cf_workspaces_widget/Resources/Private/Language/locallang.xlf:workspaces.widget.settings.title.label',
+            'LLL:EXT:cf_workspaces_widget/Resources/Private/Language/locallang.xlf:workspaces.widget.settings.title.description',
         );
 
         $workspaceSettings = new SettingDefinition(
             'workspace',
             'string',
             (string)$firstWorkspace,
-            '',
-            '',
+            'LLL:EXT:cf_workspaces_widget/Resources/Private/Language/locallang.xlf:workspaces.widget.settings.workspace.label',
+            'LLL:EXT:cf_workspaces_widget/Resources/Private/Language/locallang.xlf:workspaces.widget.settings.workspace.description',
             false,
             $workspaces
         );
