@@ -1,0 +1,33 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    CodeFareith\CfWorkspacesWidget\Service\:
+        resource: '../Classes/Service/*'
+
+    CodeFareith\CfWorkspacesWidget\Widgets\:
+        resource: '../Classes/Widgets/*'
+
+    CodeFareith\CfWorkspacesWidget\Service\WorkspacesWidgetService:
+        class: 'CodeFareith\CfWorkspacesWidget\Service\WorkspacesWidgetService'
+        arguments:
+            $workspaceService: '@TYPO3\CMS\Workspaces\Service\WorkspaceService'
+            $gridDataService: '@TYPO3\CMS\Workspaces\Service\GridDataService'
+            $workspaceRepository: '@TYPO3\CMS\Workspaces\Domain\Repository\WorkspaceRepository'
+            $workspaceStageRepository: '@TYPO3\CMS\Workspaces\Domain\Repository\WorkspaceStageRepository'
+
+    CodeFareith\CfWorkspacesWidget\Widgets\WorkspacesWidget:
+        class: 'CodeFareith\CfWorkspacesWidget\Widgets\WorkspacesWidget'
+        arguments:
+            $workspacesWidgetService: '@CodeFareith\CfWorkspacesWidget\Service\WorkspacesWidgetService'
+        tags:
+            - name: dashboard.widget
+              identifier: 'cfworkspaces'
+              groupNames: 'systemInfo'
+              title: 'LLL:EXT:cf_workspaces_widget/Resources/Language/'
+              description: 'LLL:EXT:cf_workspaces_widget/Resources/Language'
+              iconIdentifier: 'content-dashboard'
+              height: 'large'
+              width: 'medium'

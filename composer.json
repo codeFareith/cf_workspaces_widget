@@ -1,0 +1,104 @@
+{
+    "name": "codefareith/cf-workspaces-widget",
+    "description": "Widget for editors to check workspaces status of content elements.",
+    "type": "typo3-cms-extension",
+    "keywords": [
+        "typo3",
+        "typo3-cms",
+        "typo3-cms-extension",
+        "typo3-extension",
+        "extension",
+        "php",
+        "workspaces"
+    ],
+    "homepage": "https://github.com/codeFareith/cf_workspaces_widget",
+    "readme": "README.md",
+    "time": "",
+    "license": [
+        "GPL-3.0-or-later"
+    ],
+    "authors": [
+        {
+            "name": "Robin von den Bergen",
+            "email": "robinvonberg@gmx.de",
+            "homepage": "https://github.com/codeFareith/",
+            "role": "developer"
+        }
+    ],
+    "support": {
+        "email": "robinvonberg@gmx.de",
+        "issues": "https://github.com/codeFareith/cf_workspaces_widget/issues",
+        "wiki": "https://github.com/codeFareith/cf_workspaces_widget/wiki",
+        "source": "https://github.com/codeFareith/cf_workspaces_widget/releases",
+        "docs": "https://github.com/codeFareith/cf_workspaces_widget/tree/master/Documentation",
+        "rss": "https://github.com/codeFareith/cf_workspaces_widget/commits/master.atom"
+    },
+    "require": {
+        "typo3/cms-core": "^14.0",
+        "typo3/cms-backend": "^14.0",
+        "typo3/cms-extbase": "^14.0",
+        "typo3/cms-dashboard": "^14.0",
+        "typo3/cms-workspaces": "^14.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "conflict": {},
+    "replace": {
+        "codefareith/cf_workspaces_widget": "self.version",
+        "typo3-ter/cf-workspaces-widget": "self.version"
+    },
+    "provide": {},
+    "suggest": {},
+
+    "autoload": {
+        "psr-0": {},
+        "psr-4": {
+            "CodeFareith\\CfWorkspacesWidget\\": "Classes/"
+        },
+        "classmap": [],
+        "files": [],
+        "exclude-from-classmap": [
+            "Tests/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CodeFareith\\CfWorkspacesWidget\\Tests\\": "Tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": {},
+    "config": {
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "mkdir -p .Build/Web/typo3conf/ext/",
+            "[ -L .Build/Web/typo3conf/ext/cf_workspaces_widget ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/cf_workspaces_widget"
+        ],
+        "git-archive": "git archive -o \"${PWD##*/}_$(composer git-version).zip\" HEAD",
+        "git-version": "fn () { git tag -l --sort=-v:refname | grep -m 1 -o \"[0-9.]\\+${1:+-$1}$\"; }; fn"
+    },
+    "scripts-descriptions": {
+        "git-archive": "Creates a TER compilant zip archive of the extension based on the most recent tag.",
+        "git-version": "Returns the most recent version/tag number. You could also call e.g. 'docker git-version -- dev' to get the latest dev version (e.g. v1.2.x-dev)."
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.2.x-dev"
+        },
+        "typo3/cms": {
+            "extension-key": "cf_workspaces_widget",
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": ".Build/Web"
+        }
+    },
+    "bin": [],
+    "archive": {},
+    "abandoned": false,
+    "non-feature-branches": []
+}
