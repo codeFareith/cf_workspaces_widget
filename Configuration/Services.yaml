@@ -26,8 +26,8 @@ services:
             - name: dashboard.widget
               identifier: 'cfworkspaces'
               groupNames: 'systemInfo'
-              title: 'LLL:EXT:cf_workspaces_widget/Resources/Language/locallang.xlf:workspaces.widget.label'
-              description: 'LLL:EXT:cf_workspaces_widget/Resources/Language/locallang.xlf:workspaces.widget.description'
+              title: 'LLL:EXT:cf_workspaces_widget/Resources/Private/Language/locallang.xlf:workspaces.widget.title'
+              description: 'LLL:EXT:cf_workspaces_widget/Resources/Private/Language/locallang.xlf:workspaces.widget.description'
               iconIdentifier: 'content-dashboard'
               height: 'large'
               width: 'medium'

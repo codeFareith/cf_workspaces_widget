@@ -3,7 +3,7 @@
 	<file source-language="en" datatype="plaintext" original="EXT:cf_workspaces_widget/Resources/Private/Language/locallang.xlf" date="2025-12-110T20:00:00Z" product-name="cf_workspaces_widget">
 		<header/>
 		<body>
-			<trans-unit id="workspaces.widget.label">
+			<trans-unit id="workspaces.widget.title">
 				<source>Workspaces Widget</source>
 			</trans-unit>
 			<trans-unit id="workspaces.widget.description">
